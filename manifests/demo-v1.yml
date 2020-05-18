@@ -11,7 +11,7 @@ data:
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: spinnaker-demo-v2
+  name: spinnaker-demo-v3
   namespace: default
   labels:
     source: demo
@@ -31,7 +31,7 @@ spec:
     spec:
       containers:
       - name: primary
-        image: index.docker.io/konikris/spinnaker-app:v8
+        image: index.docker.io/konikris/spinnaker-app:v9
         ports:
         - containerPort: 8000
         readinessProbe:
