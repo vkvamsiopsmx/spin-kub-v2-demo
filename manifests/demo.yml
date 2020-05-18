@@ -23,13 +23,11 @@ spec:
     matchLabels:
       source: demo
       app: spinnaker
-     # version: v1
   template:
     metadata:
       labels:
         source: demo
         app: spinnaker
-     #   version: v1
     spec:
       containers:
       - name: primary
@@ -54,7 +52,6 @@ spec:
   selector:
     source: demo
     app: spinnaker
-   # version: v1
   type: LoadBalancer
   ports:
   - protocol: TCP
