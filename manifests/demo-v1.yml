@@ -21,13 +21,13 @@ spec:
   replicas: 3
   selector:
     matchLabels:
-      source-v: demo-v5
-      app-v: spinnaker-v5
+      source: demo
+      app: spinnaker
   template:
     metadata:
       labels:
-        source-v: demo-v5
-        app-v: spinnaker-v5
+        source: demo
+        app: spinnaker
     spec:
       containers:
       - name: primary
