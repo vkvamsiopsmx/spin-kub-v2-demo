@@ -29,6 +29,7 @@ spec:
       labels:
         source: demo
         app: spinnaker
+        version: v1
     spec:
       containers:
       - name: primary
