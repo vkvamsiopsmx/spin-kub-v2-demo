@@ -11,7 +11,7 @@ data:
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: spinnaker-demo
+  name: spinnaker-demo-v1
   namespace: default
   labels:
     source: demo
@@ -23,6 +23,7 @@ spec:
     matchLabels:
       source: demo
       app: spinnaker
+      version: v1
   template:
     metadata:
       labels:
@@ -31,7 +32,7 @@ spec:
     spec:
       containers:
       - name: primary
-        image: index.docker.io/konikris/spinnaker-app:latest
+        image: index.docker.io/konikris/spinnaker-app:v1
         ports:
         - containerPort: 8000
         readinessProbe:
@@ -46,12 +47,13 @@ spec:
 kind: Service
 apiVersion: v1
 metadata:
-  name: spinnaker-demo
+  name: spinnaker-demo-v1
   namespace: default
 spec:
   selector:
     source: demo
     app: spinnaker
+    version: v1
   type: LoadBalancer
   ports:
   - protocol: TCP
